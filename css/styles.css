@@ -17,6 +17,34 @@ html{
     z-index: 99;
     transition: all 0.4s ease-in-out;
 }
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.header.sticky{
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 3px 3px 25px 0px rgba(1, 2, 2, 0.3);
+    transition: all 0.4s ease-in-out;
+    animation-name: animationFade ;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes animationFade{
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
 .header .logo{
     float: left;
     width: 40px;
@@ -231,7 +259,21 @@ html{
     .header{
         padding: 15px 0;
     }
-#wrapper{
-    overflow: hidden;
+    .header.sticky{
+        padding: 15px 0;
+        box-shadow: none;
+        animation-fill-mode: none;
+        animation-name: none;
+    }
 }
+
+@media(max-width : 767px){
+    .header,
+    .header.sticky{
+        padding: 15px 0;
+    }
+
+    .tr-nabar-collapse{
+        margin-top: 72px;
+    }
 }
