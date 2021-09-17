@@ -587,13 +587,22 @@ span{
 	font-weight: 800;
 }
 
+/* pizza-size section */
+.pizza-size {
+	margin-bottom: 1em;
+}
+
+.pizza-size .form-check-label {
+	font-weight: 800;
+}
+
 /* restyle cards and the card buttons on top */
 .card {
 	margin-bottom: .5em;	
 }
 
 .card-header {
-	background: #605954;
+	background: #081829;
 	color: #fff;	
 	padding: .6em;
 }
@@ -603,7 +612,7 @@ span{
 }
 
 .card-button, .card-button:focus, .card-button:active {
-	background: #605954;
+	background: #081829;
 	color: #fff;
 	text-align: left;
 	font-weight: 800;
@@ -615,6 +624,55 @@ span{
 }
 
 .card-body .form-check-label {
-	color: #605954;
+	color: #081829;
 	padding-left: 5px;
+}
+
+/* restyle action buttons */
+.btn-primary {
+    color: #fff;
+    background-color: #c4122f;
+    border-color: #c4122f;
+	border-radius: 0;
+	margin: 1em auto;
+	box-shadow: 0;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+	background-color: #8B0E04;
+	border-color: #8B0E04;
+	box-shadow: none;
+}
+
+@media (max-width: 700px) {
+	#calcBtn {
+		width: 100%;
+	}
+}
+
+/* default error message to hidden */
+#orderErrorMsg {
+	display: none;
+}
+
+/* order total modal */
+.modal-body {
+	margin: 5%;
+}
+
+.itemName, .totalName {
+	width:  75%;
+	float: left;
+	padding: 1%;
+}
+
+.itemPrice, #totalPrice  {
+	width: 22%;
+	float: right;
+	text-align: right;
+	margin: auto 1%;	
+}
+
+.totalName, #totalPrice {
+	font-size:1.5rem;
 }
