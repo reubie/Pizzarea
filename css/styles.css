@@ -621,7 +621,7 @@ span{
     padding: 30px 0 100px;
 }
 .specialities{
-    background-image: url(assets/images/background-shape/bg-shape2.png);
+    background-image: url(../images/bg-shape2.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 30px;

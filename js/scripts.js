@@ -1,28 +1,26 @@
 $ (document).ready(function() {
-
-	// calculation click function
-
-    $("#calcBtn").click(function() {
-
-        // error messages displayed
+	// calcBtn click function
+	$("#calcBtn").click(function() {	
+	
+		// start with no error messages displayed
 		clearErrorMsg();
 		var errorMsg="";
-
-        // fetch checked radio buttons. Display an error if nothing was selected.
+		
+		// get entries from checked radio buttons. Display an error if nothing was selected.
 		var size = document.querySelector('input[name="selectedSize"]:checked');
 		var crust = document.querySelector('input[name="selectedCrust"]:checked');
 		var sauce = document.querySelector('input[name="selectedSauce"]:checked');
 		var cheese = document.querySelector('input[name="selectedCheese"]:checked');
-
-        // get values of checked checkboxes (an array). Display an error if nothing was selected.
+		
+		// get values of checked checkboxes (an array). Display an error if nothing was selected.
 		var meat = $('#meatSelection input').filter(':checked').map(function() {
-            return this.nextElementSibling.innerHTML.trim();
-          }).get();
-          var veggie = $('#veggieSelection input').filter(':checked').map(function() {
-            return this.nextElementSibling.innerHTML.trim();
-          }).get();
-          
-          // check for errors: all required except 
+		  return this.nextElementSibling.innerHTML.trim();
+		}).get();
+		var veggie = $('#veggieSelection input').filter(':checked').map(function() {
+		  return this.nextElementSibling.innerHTML.trim();
+		}).get();
+		
+		// check for errors: all required except for meat and veggie
 		if (isEmpty(size)) {
 			if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
 			errorMsg = errorMsg + " size";
@@ -44,6 +42,7 @@ $ (document).ready(function() {
 			document.getElementById("cheeseBtn").style.color = "#c4122f";
 		};
 		
+		/* don't require meat or veggies
 		if (isEmpty(meat)) {
 			if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
 			errorMsg = errorMsg + " meat";
@@ -54,14 +53,15 @@ $ (document).ready(function() {
 			errorMsg = errorMsg + " veggie";
 			document.getElementById("veggieBtn").style.color = "#c4122f";
 		};
-		
-        // construct final error message
+		*/
+				
+		// construct final error message
 		if (errorMsg!==null && errorMsg!=="") {
 			errorMsg = "Please select at least one:" + errorMsg;
 			addErrorMsg(errorMsg);
 		};
 
-        // if no errors, continue
+		// if no errors, continue
 		if (errorMsg==null || errorMsg=="") {
 			// price arrays
 			var arraySize = [
@@ -82,10 +82,10 @@ $ (document).ready(function() {
 				{ price:3 },
 				{ price:0 }
 			]
-
+			
 			// get selected item names and prices
 			// -- from radio button groups
-			var sizeName = size.nextElementSibling.innerHTML;		
+			var sizeName = size.nextElementSibling.innerHTML;		// OR, using jQuery:	var sizeName = $('input[name="selectedSize"]:checked + label').text();
 			var sizePrice = arraySize[size.value].price;
 			console.log(sizeName + " $" + sizePrice);
 			
@@ -100,8 +100,8 @@ $ (document).ready(function() {
 			var cheeseName = cheese.nextElementSibling.innerHTML;	
 			var cheesePrice = arrayCheese[cheese.value].price;
 			console.log(cheeseName + " $" + cheesePrice);
-
-            // -- from checkbox groups
+			
+			// -- from checkbox groups
 			var meatName = meat.join(", ");
 			var meatPrice = meat.length - 1;
 			if (meatPrice < 0) { meatPrice=0 };
@@ -111,8 +111,8 @@ $ (document).ready(function() {
 			var veggiePrice = veggie.length - 1;
 			if (veggiePrice < 0) { veggiePrice=0 };
 			console.log(veggieName + " $" + veggiePrice);
-
-            // calc total
+			
+			// calc total
 			var total = sizePrice + crustPrice + saucePrice + cheesePrice + meatPrice + veggiePrice;
 			console.log("Total = $" + total);
 
@@ -146,10 +146,10 @@ $ (document).ready(function() {
 		};
 			
 	});
-
-    // test whether a selection was made
+	// end of calcBtn click function
+	
+	// used to test whether a selection was made
 		function isEmpty(obj){	
-
 			// obj will be an array if a checkbox was tested and a string if a radio button was tested
 			if (Array.isArray(obj)) {
 				if (obj.length == 0) { return true; }
@@ -160,14 +160,14 @@ $ (document).ready(function() {
 				return false;
 			};
 		};
-
-        // display error message
+	
+	// display error message
 	function addErrorMsg(errorMsg) {
-		$("#orderErrorMsg").text(errorMsg);			
-		$("#orderErrorMsg").show();					
+		$("#orderErrorMsg").text(errorMsg);			// OR: document.getElementById("orderErrorMsg").innerHTML = errorMsg;
+		$("#orderErrorMsg").show();					// display the error div
 	};
 
-    // hide error message section and reset color on headers
+	// hide error message section and reset color on headers
 	function clearErrorMsg() {
 		$("#orderErrorMsg").hide();
 		document.getElementById("pizza-size-header").style.color = "#231f20";
@@ -178,4 +178,4 @@ $ (document).ready(function() {
 		document.getElementById("veggieBtn").style.color = "#fff";
 	};	
 	
-});	
+});
