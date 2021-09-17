@@ -1,0 +1,13 @@
+body{
+    background-color: #081829;
+    color: #ee4540;
+    font: 400 14px/22px 'Lora', serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#wrapper{
+    overflow: hidden;
+}
