@@ -184,7 +184,7 @@
         </section>  
 
         <!-- order form -->
-	<div class="wrapper">
+	<div class="wrapper" id="create">
 		<div class="jumbotron">
 			<h1>Create Your Pizza</h1>
 		</div>
@@ -502,6 +502,14 @@
                 </div>
             </div>
         </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <input type="number" class="form-control" id="food_quantity" placeholder="Quantity" onkeyup="finalCost()" >
+            </div>
+        </div>
+
+        
+        
         
             <!-- error messages -->
             <div class="alert alert-danger" id="orderErrorMsg" role="alert">
@@ -566,6 +574,7 @@
         </div>
     </div>
 </div> 
+</div>
 <script src="./js/scripts.js"></script>	
 </body>
 </html>
