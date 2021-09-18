@@ -820,247 +820,44 @@ span{
         text-align: justify;
     }
 }
+/*<--------------------Content Styling---------------->*/
 
-
-
-/* order section */
-
-
-.wrapper {
-	max-width: 900px;
-	width: 90%;
-	opacity: 1;
-	background: #081829;
-	margin: 5% auto;
-}
-
-.wrapper .wrapper {
-	margin: 2% 5%;
-}
-
-.jumbotron {
-	background: #081829;
-	height: 6em;
-	border-bottom: 1px solid #bbb;
-	padding-top: 2em;
-	padding-bottom: 5em;
-}
-
-/* pizza-size section */
-.pizza-size {
-	margin-bottom: 1em;
-}
-
-.pizza-size .form-check-label {
-	font-weight: 800;
-}
-
-/* pizza-size section */
-.pizza-size {
-	margin-bottom: 1em;
-}
-
-.pizza-size .form-check-label {
-	font-weight: 800;
-}
-
-/* restyle cards and the card buttons on top */
-.card {
-	margin-bottom: .5em;	
-}
-
-.card-header {
-	background: #081829;
-	color: #fff;	
-	padding: .6em;
-}
-
-.card-body {
-	padding: 0;
-}
-
-.card-button, .card-button:focus, .card-button:active {
-	background: #081829;
-	color: #fff;
-	text-align: center;
-	font-weight: 800;
-	box-shadow: none;
-}
-
-.card-body .form-check {
-	padding: 1rem 1.5rem;
-}
-
-.card-body .form-check-label {
-	color: #081829;
-	padding-left: 5px;
-}
-
-/* restyle action buttons */
-.btn-primary {
-    color: #fff;
-    background-color: #c4122f;
-    border-color: #c4122f;
-	border-radius: 0;
-	margin: 1em auto;
-    margin-left: 2rem;
-	box-shadow: 0;
-}
-
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-	background-color: #8B0E04;
-	border-color: #8B0E04;
-	box-shadow: none;
-}
-
-@media (max-width: 700px) {
-	#calcBtn {
-		width: 100%;
-	}
-}
-
-/* default error message to hidden */
-#orderErrorMsg {
-	display: none;
-}
-
-/* order total modal */
-.modal-body {
-	margin: 5%;
-}
-
-.itemName, .totalName {
-	width:  75%;
-	float: left;
-	padding: 1%;
-}
-
-.itemPrice, #totalPrice  {
-	width: 22%;
-	float: right;
-	text-align: right;
-	margin: auto 1%;	
-}
-
-.totalName, #totalPrice {
-	font-size:1.5rem;
-}
-
-/* online order */
-
-#output {
-    background-color: #c5edf3;
-    color: #463c39;
-    font-size: 17px;
-    padding: 30px 30px;
-    width: 40%;
-    border: 2px solid #009688;
-    font-family: sans-serif;
-    line-height: 1.8;
-}
-#newPublish {
-    background-color: #c5edf3;
-    color: #463c39;
-    font-size: 17px;
-    padding: 30px 30px;
-    width: 40%;
-    border: 2px solid #009688;
-    font-family: sans-serif;
-    line-height: 1.8;
-}
-.box {
-    background-color: #f7f7f7;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    padding: 40px 60px;
-}
-#details_info {
-    background-color: #f7f7f7;
-    color: #463c39;
-    font-size: 17px;
-    padding: 30px 30px;
-    width: 40%;
-    border: 1px solid #cccccc;
-    font-family: sans-serif;
-    line-height: 1.8;
-    margin-left: 90px;
-}
-.box3 {
-    margin-top: 80px;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: 60px;
-    padding: 40px 50px;
-    background-color: gainsboro;
-}
-.box11 {
-    margin-top: 80px;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-bottom: 60px;
-    padding: 40px 50px;
-    background-color: gainsboro;
-    line-height: 2.5;
-}
-.web_design_box {
-    margin-top: 30px;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-bottom: 60px;
-    padding: 40px 50px;
-    background-color: #d9edf7;
-    box-shadow: 3px 5px 10px #318f86;
-}
-.hotel_reserve_box {
-    margin-top: 30px;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-bottom: 60px;
-    padding: 40px 50px;
-    background-color: #c6badc;
-    box-shadow: 3px 5px 10px #7527b0;
-}
-.online_food_delivery_box {
-    margin-top: 50px;
-    margin-bottom: 60px;
-    padding: 20px 40px;
-    background-color: #081829;
-    box-shadow: 3px 5px 10px #714c4a;
-}
-.result_box {
-    margin-top: 15%;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-bottom: 60px;
-    padding: 20px 40px;
-    background-color: #d4c0b9;
-    box-shadow: 3px 5px 10px #8BC34A;
-}
-.result_box_text {
-    color: #232222;
-    font-size: 20px;
+#landing-content {
+    color: #000000;
+    background-color: #FFFFFF;
+    margin-top: 200px;
     text-align: center;
-    padding-top:10px;
-}
-.result_box_text span {
-    color: #614136;
-    font-size: 26px;
+  }
+  
+  #order-content {
+    display: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: centerS;
-    color: #495057;
-    background-color: #081829;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-
-
+  }
+  
+  #price-content {
+    margin-top: 100px;
+  }
+  
+  .page-header {
+    font-size: 65pt;
+    margin-bottom: 75px;
+    padding-bottom: 35px;
+  }
+  
+  #address-form {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .address-spacing {
+    margin-bottom: 20px;
+  }
+  
+  #state-select {
+    margin-top: 0px;
+  }
