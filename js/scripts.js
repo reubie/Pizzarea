@@ -31,3 +31,23 @@ Order.prototype.pizzaCost = function () {
 	this.pizzaPrice += this.meat;
 	return this.pizzaPrice;
   }
+
+Order.prototype.sideCost = function () {
+	return this.sidePrice;
+  }
+  Order.prototype.finalCost = function () {
+	var cartTotalPrice = 0;
+	for (var arrayElement = 0; arrayElement < totalPriceArray.length; arrayElement ++) {
+	  cartTotalPrice += totalPriceArray[arrayElement];
+	}
+	return cartTotalPrice;
+  }
+  
+function Address (streetAddress, city, state, zipcode) {
+	this.streetAddress = streetAddress;
+	this.city = city;
+	this.state = state;
+	this.zipcode = zipcode;
+	this.deliveryAddress = (streetAddress + "  " + city + ", " + state + "  " + zipcode);
+  }
+  
