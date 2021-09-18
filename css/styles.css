@@ -861,3 +861,36 @@ span{
   #state-select {
     margin-top: 0px;
   }
+
+  /*<--------------------Btn Styling---------------->*/
+
+#pickup-btn, #delivery-btn, #custom-pizza-btn, #submit-custom-pizza {
+    font-size: 20pt;
+    margin-top: 30px;
+  }
+  
+  #custom-pizza-btn {
+    display: none;
+  }
+  
+  #pickup-btn, #delivery-btn {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+  
+  #order-proceed-btn {
+    font-size: 20pt;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+  
+  #checkout-btn {
+    font-size: 20pt;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  
+  #submit-custom-pizza {
+    margin-bottom: 35px;
+  }
