@@ -533,6 +533,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header" id="headingSix">
+                                <h5 class="mb-0">
+                                    <button id="quantityBtn" class="btn btn-block card-button collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Quantity
+                                    </button>
+                                </h5>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row" id="quantitySelection">
+                                                <div class="counter">
+                                                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                    <input type="text" value="1">
+                                                    <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- error messages -->

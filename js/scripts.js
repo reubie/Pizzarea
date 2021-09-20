@@ -123,6 +123,7 @@ $ (document).ready(function() {
 		var sauce = document.querySelector('input[name="selectedSauce"]:checked');
 		var cheese = document.querySelector('input[name="selectedCheese"]:checked');
 		
+
 		// get values of checked checkboxes (an array). Display an error if nothing was selected.
 		var meat = $('#meatSelection input').filter(':checked').map(function() {
 		  return this.nextElementSibling.innerHTML.trim();
@@ -130,6 +131,10 @@ $ (document).ready(function() {
 		var veggie = $('#veggieSelection input').filter(':checked').map(function() {
 		  return this.nextElementSibling.innerHTML.trim();
 		}).get();
+
+		var quantity = $('#quantitySelection input').filter(':selected').map(function() {
+			return this.nextElementSibling.innerHTML.trim();
+		  }).get();
 		
 		// check for errors: all required except for meat and veggie
 		if (isEmpty(size)) {
@@ -153,18 +158,18 @@ $ (document).ready(function() {
 			document.getElementById("cheeseBtn").style.color = "#c4122f";
 		};
 		
-		/* don't require meat or veggies
-		if (isEmpty(meat)) {
-			if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
-			errorMsg = errorMsg + " meat";
-			document.getElementById("meatBtn").style.color = "#c4122f";
-		};
-		if (isEmpty(veggie)) {
-			if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
-			errorMsg = errorMsg + " veggie";
-			document.getElementById("veggieBtn").style.color = "#c4122f";
-		};
-		*/
+		// /* don't require meat or veggies
+		// if (isEmpty(meat)) {
+		// 	if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
+		// 	errorMsg = errorMsg + " meat";
+		// 	document.getElementById("meatBtn").style.color = "#c4122f";
+		// };
+		// if (isEmpty(veggie)) {
+		// 	if (errorMsg !== null && errorMsg!=="") {errorMsg = errorMsg + ",";}
+		// 	errorMsg = errorMsg + " veggie";
+		// 	document.getElementById("veggieBtn").style.color = "#c4122f";
+		// };
+		// */
 				
 		// construct final error message
 		if (errorMsg!==null && errorMsg!=="") {
@@ -321,3 +326,20 @@ $(document).ready(function() {
         $(".search-icon").css("display","inline-block");
     });
 });
+
+function increaseCount(a, b) {
+	var input = b.previousElementSibling;
+	var value = parseInt(input.value, 10); 
+	value = isNaN(value)? 0 : value;
+	value ++;
+	input.value = value;
+  }
+  function decreaseCount(a, b) {
+	var input = b.nextElementSibling;
+	var value = parseInt(input.value, 10); 
+	if (value > 1) {
+	  value = isNaN(value)? 0 : value;
+	  value --;
+	  input.value = value;
+	}
+  }
