@@ -213,18 +213,24 @@ $ (document).ready(function() {
 				{ price:16 }
 			]
 			var arrayCrust = [
-				{ price:0 },
-				{ price:0 },
+				{ price:1 },
+				{ price:2 },
 				{ price:3 },
-				{ price:0 },
-				{ price:0 }
+				{ price:4 },
+				{ price:5 }
 			]
 			var arrayCheese = [
-				{ price:0 },
+				{ price:4 },
 				{ price:3 },
 				{ price:0 }
 			]
-			
+			var arraySauce = [
+				{ price:4 },
+				{ price:2 },
+				{ price:3 },
+				{ price:0 }
+			]
+
 			// get selected item names and prices
 			// -- from radio button groups
 			var sizeName = size.nextElementSibling.innerHTML;		// OR, using jQuery:	var sizeName = $('input[name="selectedSize"]:checked + label').text();
@@ -236,7 +242,7 @@ $ (document).ready(function() {
 			console.log(crustName + " $" + crustPrice);
 			
 			var sauceName = sauce.nextElementSibling.innerHTML;	
-			var saucePrice = 0;
+			var saucePrice = arraySauce[sauce.value].price;
 			console.log(sauceName + " $" + saucePrice);
 			
 			var cheeseName = cheese.nextElementSibling.innerHTML;	
@@ -270,6 +276,7 @@ $ (document).ready(function() {
 			if (crustPrice > 0) {itemPrices[1].innerHTML = "$" + crustPrice.toFixed(2)};
 			
 			itemNames[2].innerHTML = sauceName;
+			if (saucePrice > 0) {itemPrices[2].innerHTML = "$" + saucePrice.toFixed(2)};
 			
 			
 			itemNames[3].innerHTML = cheeseName;

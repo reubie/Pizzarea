@@ -417,12 +417,10 @@ span{
     color: #fff;
 }
 .modal-content{
-    background-color: transparent;
+    background-color: white;
     border: none;
-    position: relative;
 }
 .modal-content button{
-    position: absolute;
     right: 4%;
     z-index: 100;
     top: 2%;
@@ -996,7 +994,7 @@ span{
 }
 
 .card-header {
-	background: #605954;
+	background: #081829;;
 	color: #fff;	
 	padding: .6em;
 }
@@ -1006,7 +1004,7 @@ span{
 }
 
 .card-button, .card-button:focus, .card-button:active {
-	background: #605954;
+	background: #081829;;
 	color: #fff;
 	text-align: left;
 	font-weight: 800;
@@ -1018,7 +1016,7 @@ span{
 }
 
 .card-body .form-check-label {
-	color: #605954;
+	color: #081829;;
 	padding-left: 5px;
 }
 
