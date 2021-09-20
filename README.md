@@ -9,9 +9,6 @@
 This project is a web application for a pizza website that offers the option of ordering your desired pizza and it can be delivered to you or pick it up if you desire
 
 
-## Live Page 
-https://reubie.github.io/Delani-Studio/
-
 
 ## Installation / Setup instruction
 * Open Terminal {Ctrl+Alt+T}
