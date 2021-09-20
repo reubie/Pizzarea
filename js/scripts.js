@@ -54,6 +54,11 @@ function Address (streetAddress, city, state, zipcode) {
   //User Interface Logic
 $(document).ready(function(event) {
 
+  $("#order-btn").click(function() {
+    $("#order-content").show();
+    $("#landing-content").hide();
+    $("#delivery-option").text("Order Now");
+  });
   $("#pickup-btn").click(function() {
     $("#order-content").show();
     $("#landing-content").hide();
