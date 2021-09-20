@@ -51,96 +51,7 @@ function Address (streetAddress, city, state, zipcode) {
 	this.deliveryAddress = (streetAddress + "  " + city + ", " + state + "  " + zipcode);
   }
 
-  //User Interface Logic
-$(document).ready(function(event) {
-
-  $("#order-btn").click(function() {
-    $("#order-content").show();
-    $("#landing-content").hide();
-    $("#delivery-option").text("Order Now");
-  });
-  $("#pickup-btn").click(function() {
-    $("#order-content").show();
-    $("#landing-content").hide();
-    $("#delivery-option").text("PICKUP BY CUSTOMER");
-  });
-  $("#delivery-btn").click(function() {
-    $("#address").show();
-    $("#pickup-btn,#delivery-btn,#landing-tagline").hide();
-  });
-  $("form#address-form").submit(function(event) {
-    event.preventDefault();
-    var streetAddress = $("input#street-add").val();
-    var city = $("input#city-add").val();
-    var state = $("select#state-select").val();
-    var zipcode = $("input#zip-add").val();
-    var newAddress = new Address(streetAddress, city, state, zipcode)
-    $("#order-content").show();
-    $("#landing-content").hide();
-    $("#delivery-option").text("DELIVER TO: " + newAddress.deliveryAddress);
-  });
-  $("form#custom-pizza").submit(function(event) {
-    event.preventDefault();
-    var customSize = $("select#size").val();
-    var sauce = $("select#sauce").val();
-    var cheese = $("select#cheese").val();
-    var veggie1 = $("select#veggie1").val();
-    var veggie2 = $("select#veggie2").val();
-    var meat = $("select#meat").val();
-    var pizzaDetails = (customSize + " - " + sauce + ", " + cheese + ", " + veggie1 + ", " + veggie2 + ", " + meat);
-    var newPizzaOrder = new Order(customSize, cheese);
-    newPizzaOrder.pizzaCost();
-    totalPriceArray.push(newPizzaOrder.pizzaPrice);
-    $("#pizza-details-dropdown").show();
-    $("#final-cost").text(newPizzaOrder.finalCost());
-    $("#pizza-details").append("<ul><li>" + pizzaDetails + "</li></ul>");
-    $("#size, #sauce, #cheese, #veggie1, #veggie2, #meat").val("");
-  });
-  $("#pizza-details-dropdown").click(function() {
-    $("#pizza-details").toggle();
-  });
-
-  /////Side Orders
-var newSideOrder = new Order();
-  $("#breadsticks").click(function() {
-    newSideOrder.sideCost();
-    totalPriceArray.push(newSideOrder.sidePrice);
-    $("#final-cost").text(newSideOrder.finalCost());
-    $("#sides-dropdown").show();
-    $("#sides-details").append("<ul><li>" + "3 garlic breadsticks" + "</li></ul>");
-  });
-  $("#brownie").click(function() {
-    newSideOrder.sideCost();
-    totalPriceArray.push(newSideOrder.sidePrice);
-    $("#final-cost").text(newSideOrder.finalCost());
-    $("#sides-dropdown").show();
-    $("#sides-details").append("<ul><li>" + "1 jumbo, double-chocolate brownie" + "</li></ul>");
-  });
-  $("#soda").click(function() {
-    newSideOrder.sideCost();
-    totalPriceArray.push(newSideOrder.sidePrice);
-    $("#final-cost").text(newSideOrder.finalCost());
-    $("#sides-dropdown").show();
-    $("#sides-details").append("<ul><li>" + "16oz., root-beer italian soda" + "</li></ul>");
-  });
-  $("#sides-dropdown").click(function() {
-    $("#sides-details").toggle();
-  });
-
-  ///Checkout Btn
-  $("#checkout-btn").click(function() {
-    alert("Thank you for shopping with us. Your order is being processed!!");
-    location.reload();
-  });
-
-  $("#order-proceed-btn").click(function() {
-    alert("Your order is on the way please be patient!!");
-    location.reload();
-  });
-});
-
-
-$ (document).ready(function() {
+  $ (document).ready(function() {
 	// calcBtn click function
 	$("#calcBtn").click(function() {	
 	
@@ -233,7 +144,7 @@ $ (document).ready(function() {
 
 			// get selected item names and prices
 			// -- from radio button groups
-			var sizeName = size.nextElementSibling.innerHTML;		// OR, using jQuery:	var sizeName = $('input[name="selectedSize"]:checked + label').text();
+			var sizeName = size.nextElementSibling.innerHTML;
 			var sizePrice = arraySize[size.value].price;
 			console.log(sizeName + " $" + sizePrice);
 			
@@ -296,35 +207,121 @@ $ (document).ready(function() {
 			
 	});
 	// end of calcBtn click function
-	
+
+  //User Interface Logic
+$(document).ready(function(event) {
+
+  $("#order-btn").click(function() {
+    $("#order-content").show();
+    $("#landing-content").hide();
+    $("#delivery-option").text("Order Now");
+  });
+  $("#pickup-btn").click(function() {
+    $("#order-content").show();
+    $("#landing-content").hide();
+    $("#delivery-option").text("PICKUP BY CUSTOMER");
+  });
+  $("#delivery-btn").click(function() {
+    $("#address").show();
+    $("#pickup-btn,#delivery-btn,#landing-tagline").hide();
+  });
+  $("form#address-form").submit(function(event) {
+    event.preventDefault();
+    var streetAddress = $("input#street-add").val();
+    var city = $("input#city-add").val();
+    var state = $("select#state-select").val();
+    var zipcode = $("input#zip-add").val();
+    var newAddress = new Address(streetAddress, city, state, zipcode)
+    $("#order-content").show();
+    $("#landing-content").hide();
+    $("#delivery-option").text("DELIVER TO: " + newAddress.deliveryAddress);
+  });
+  $("form#custom-pizza").submit(function(event) {
+    event.preventDefault();
+    var customSize = $("select#size").val();
+    var sauce = $("select#sauce").val();
+    var cheese = $("select#cheese").val();
+    var veggie1 = $("select#veggie1").val();
+    var veggie2 = $("select#veggie2").val();
+    var meat = $("select#meat").val();
+    var pizzaDetails = (customSize + " - " + sauce + ", " + cheese + ", " + veggie1 + ", " + veggie2 + ", " + meat);
+    var newPizzaOrder = new Order(customSize, cheese);
+    newPizzaOrder.pizzaCost();
+    totalPriceArray.push(newPizzaOrder.pizzaPrice);
+    $("#pizza-details-dropdown").show();
+    $("#final-cost").text(newPizzaOrder.finalCost());
+    $("#pizza-details").append("<ul><li>" + pizzaDetails + "</li></ul>");
+    $("#size, #sauce, #cheese, #veggie1, #veggie2, #meat").val("");
+  });
+  $("#pizza-details-dropdown").click(function() {
+    $("#pizza-details").toggle();
+  });
+
+  	
 	// used to test whether a selection was made
-		function isEmpty(obj){	
-			// obj will be an array if a checkbox was tested and a string if a radio button was tested
-			if (Array.isArray(obj)) {
-				if (obj.length == 0) { return true; }
-				else { return false; }
-			} else {
-				if (obj==null || obj == "") { return true; }
-				else if (obj.length === 0) { return true; }
-				return false;
-			};
+	function isEmpty(obj){	
+		if (Array.isArray(obj)) {
+			if (obj.length == 0) { return true; }
+			else { return false; }
+		} else {
+			if (obj==null || obj == "") { return true; }
+			else if (obj.length === 0) { return true; }
+			return false;
 		};
-	
-	// display error message
-	function addErrorMsg(errorMsg) {
-		$("#orderErrorMsg").text(errorMsg);			// OR: document.getElementById("orderErrorMsg").innerHTML = errorMsg;
-		$("#orderErrorMsg").show();					// display the error div
 	};
 
-	// hide error message section and reset color on headers
-	function clearErrorMsg() {
-		$("#orderErrorMsg").hide();
-		document.getElementById("pizza-size-header").style.color = "#231f20";
-		document.getElementById("crustBtn").style.color = "#fff";
-		document.getElementById("sauceBtn").style.color = "#fff";
-		document.getElementById("cheeseBtn").style.color = "#fff";
-		document.getElementById("meatBtn").style.color = "#fff";
-		document.getElementById("veggieBtn").style.color = "#fff";
-	};	
-	
+// display error message
+function addErrorMsg(errorMsg) {
+	$("#orderErrorMsg").text(errorMsg);
+	$("#orderErrorMsg").show();			
+};
+
+// hide error message section and reset color on headers
+function clearErrorMsg() {
+	$("#orderErrorMsg").hide();
+	document.getElementById("pizza-size-header").style.color = "#231f20";
+	document.getElementById("crustBtn").style.color = "#fff";
+	document.getElementById("sauceBtn").style.color = "#fff";
+	document.getElementById("cheeseBtn").style.color = "#fff";
+	document.getElementById("meatBtn").style.color = "#fff";
+	document.getElementById("veggieBtn").style.color = "#fff";
+};	
+
 });	
+
+$(".testimonials-slider").bxSlider({
+auto:true,
+controls: true,
+nextText : '',
+prevText : '',
+pause: 5000,
+speed: 500,
+slideMargin : 30,
+pager : true,
+pagerCustom: '.testimonials-slider-pager-one, .testimonials-slider-pager-two, .testimonials-slider-pager-three'
+});
+
+$(document).ready(function() {
+$('.fa-search').on("click", function() {
+	$('.header-search .header-input').css("display","inline-block");
+	$(".close-icon").css("display","inline-block");
+	$(".search-icon").css("display","none");
+});
+$('.close-icon').on("click", function() {
+	$('.header-search .header-input').css("display","none");
+	$(".close-icon").css("display","none");
+	$(".search-icon").css("display","inline-block");
+});
+});
+
+  ///Checkout Btn
+
+  $("#order-proceed-btn").click(function() {
+	  alert(" Thank you for your order, It will be processed shortly.");
+    location.reload();
+  });
+});
+
+
+
+
